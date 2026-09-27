@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>勝北VBC VIDEO PORTAL</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Noto Sans JP", sans-serif;
+      background: #f4f6f8;
+      color: #202124;
+    }
+
+    /* ---------- Header ---------- */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e1e5e9;
+      padding: 22px 20px 18px;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 0.04em;
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* ---------- Main ---------- */
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 20px 50px;
+    }
+
+    /* ---------- Filter ---------- */
+
+    .filter-panel {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+
+    .filter-title {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #d5dae0;
+      border-radius: 8px;
+      background: white;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* ---------- Videos ---------- */
+
+    .section-title {
+      margin: 0 0 15px;
+      font-size: 18px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .video-card {
+      display: block;
+      background: #ffffff;
+      border-radius: 13px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 3px 12px rgba(0,0,0,.07);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 20px rgba(0,0,0,.12);
+    }
+
+    .thumbnail {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #ddd;
+      overflow: hidden;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .play-button {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-button::after {
+      content: "";
+      margin-left: 4px;
+      border-left: 17px solid white;
+      border-top: 11px solid transparent;
+      border-bottom: 11px solid transparent;
+    }
+
+    .video-info {
+      padding: 14px 15px 16px;
+    }
+
+    .video-title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 9px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      background: #eef1f4;
+      border-radius: 20px;
+      padding: 4px 9px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    /* ---------- Notice ---------- */
+
+    .notice {
+      margin-top: 35px;
+      padding: 14px 16px;
+      background: #ffffff;
+      border-left: 4px solid #8b949e;
+      border-radius: 7px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #687078;
+    }
+
+    /* ---------- Tablet ---------- */
+
+    @media (max-width: 850px) {
+      .filters {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ---------- Smartphone ---------- */
+
+    @media (max-width: 520px) {
+      header {
+        padding: 18px 15px 15px;
+      }
+
+      h1 {
+        font-size: 21px;
+      }
+
+      main {
+        padding: 16px 12px 35px;
+      }
+
+      .filter-panel {
+        padding: 13px;
+        margin-bottom: 20px;
+      }
+
+      .filters {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      select {
+        font-size: 13px;
+        padding: 9px;
+      }
+
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 11px;
+      }
+
+      .video-info {
+        padding: 10px;
+      }
+
+      .video-title {
+        font-size: 13px;
+      }
+
+      .tag {
+        font-size: 10px;
+        padding: 3px 7px;
+      }
+
+      .play-button {
+        width: 42px;
+        height: 42px;
+      }
+
+      .play-button::after {
+        border-left-width: 13px;
+        border-top-width: 8px;
+        border-bottom-width: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>勝北VBC VIDEO PORTAL</h1>
+    <div class="subtitle">プレー映像・振り返り</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- フィルター（サンプルでは表示のみ） -->
+  <div class="filter-panel">
+    <div class="filter-title">動画を絞り込む</div>
+
+    <div class="filters">
+      <select>
+        <option>大会</option>
+        <option>津山市新人戦</option>
+      </select>
+
+      <select>
+        <option>プレー</option>
+        <option>ディグ</option>
+        <option>ブロック</option>
+        <option>スパイク</option>
+      </select>
+
+      <select>
+        <option>選手</option>
+        <option>選手名</option>
+      </select>
+
+      <select>
+        <option>ポジション</option>
+        <option>セッター</option>
+        <option>ミドル</option>
+        <option>アウトサイド</option>
+      </select>
+    </div>
+  </div>
+
+  <h2 class="section-title">津山市新人戦</h2>
+
+  <div class="video-grid">
+
+    <!-- 001 -->
+    <a class="video-card"
+       href="https://youtu.be/xQV8Z6xowiQ"
+       target="_blank">
+
+      <div class="thumbnail">
+        <img src="https://i.ytimg.com/vi/xQV8Z6xowiQ/hqdefault.jpg"
+             alt="動画001">
+        <div class="play-button"></div>
+      </div>
+
+      <div class="video-info">
+        <div class="video-title">
+          2026年9月26日 津山市新人戦｜プレー振り返り 01
+        </div>
+
+        <div class="tags">
+          <span class="tag">ディグ</span>
+          <span class="tag">セッター</span>
+          <span class="tag">ポジショニング</span>
+        </div>
+      </div>
+    </a>
+
+
+    <!-- 002 -->
+    <a class="video-card"
+       href="https://youtu.be/9hYhhy80QPE"
+       target="_blank">
+
+      <div class="thumbnail">
+        <img src="https://i.ytimg.com/vi/9hYhhy80QPE/hqdefault.jpg"
+             alt="動画002">
+        <div class="play-button"></div>
+      </div>
+
+      <div class="video-info">
+        <div class="video-title">
+          20260926 新人戦 002
+        </div>
+
+        <div class="tags">
+          <span class="tag">津山市新人戦</span>
+        </div>
+      </div>
+    </a>
+
+
+    <!-- 003 -->
+    <a class="video-card"
+       href="https://youtu.be/_CgzPrvDS50"
+       target="_blank">
+
+      <div class="thumbnail">
+        <img src="https://i.ytimg.com/vi/_CgzPrvDS50/hqdefault.jpg"
+             alt="動画003">
+        <div class="play-button"></div>
+      </div>
+
+      <div class="video-info">
+        <div class="video-title">
+          20260926 新人戦 003
+        </div>
+
+        <div class="tags">
+          <span class="tag">津山市新人戦</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+
+  <div class="notice">
+    本ページは、チーム内でのプレー振り返りを目的とした
+    動画共有システムの試験ページです。<br>
+    掲載動画はYouTubeの限定公開機能を利用しています。
+    ページURLおよび動画URLの第三者への共有はお控えください。
+  </div>
+
+</main>
+
+</body>
+</html>
