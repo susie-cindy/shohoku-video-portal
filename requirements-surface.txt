@@ -1,0 +1,5 @@
+# 現PCで読み込み確認済みのバージョン（Python 3.13）
+openpyxl==3.1.5
+google-api-python-client==2.200.0
+google-auth==2.58.1
+google-auth-oauthlib==1.4.1

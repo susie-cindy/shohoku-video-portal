@@ -1,5 +1,7 @@
 from pathlib import Path
 from datetime import datetime
+import subprocess
+import sys
 from openpyxl import load_workbook
 
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -7,12 +9,13 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
+from googleapiclient.errors import HttpError
 
 # =========================================================
 # 設定
 # =========================================================
 
-PROJECT_DIR = Path(r"C:\Dev\shoboku-video-portal")
+PROJECT_DIR = Path(__file__).resolve().parent.parent
 
 CLIENT_SECRET = PROJECT_DIR / "client_secret.json"
 TOKEN_FILE = PROJECT_DIR / "token.json"
@@ -21,10 +24,9 @@ EXCEL_PATH = Path(
     r"C:\Users\susuk\OneDrive\勝北VBC\動画ポータル\動画管理.xlsx"
 )
 
-VIDEO_DIR = Path(
-    r"C:\Users\susuk\OneDrive\勝北VBC\動画ポータル\2026\20260926_津山市新人戦\upload"
+VIDEO_ROOT = Path(
+    r"C:\Users\susuk\OneDrive\勝北VBC\動画ポータル"
 )
-
 # アップロード・読み取り権限
 GOOGLE_API = "www." + "googleapis." + "com"
 
@@ -184,7 +186,7 @@ def upload_video(youtube, video_path, title, tags):
 def main():
     wb = load_workbook(EXCEL_PATH)
     try:
-        upload_pending(wb)
+        return upload_pending(wb)
     finally:
         wb.close()
 
@@ -219,7 +221,19 @@ def upload_pending(wb):
             for name in required[1:-1]
         }
         filename = str(data["ファイル名"] or "")
-        video_path = VIDEO_DIR / filename
+
+        matches = list(VIDEO_ROOT.glob(f"*/*/upload/{filename}"))
+
+        if len(matches) == 1:
+            video_path = matches[0]
+        elif len(matches) == 0: 
+            video_path = VIDEO_ROOT / "__NOT_FOUND__" / filename
+        else:
+            raise RuntimeError(
+                f"同名の動画ファイルが複数見つかりました: {filename}\n"
+                + "\n".join(str(path) for path in matches)
+            )
+
         date_text = format_date(data["日時"])
         title = (
             f'{date_text} '
@@ -255,10 +269,17 @@ def upload_pending(wb):
         return
 
     youtube = get_youtube()
+    success_count = 0
+    failed_no = None
     for index, (row, no, filename, video_path, title, tags) in enumerate(targets, 1):
         print(f"\n[{index}/{total}] {no} アップロード開始")
         try:
             video_id = upload_video(youtube, video_path, title, tags)
+        except HttpError as exc:
+            failed_no = no
+            print(f"\nNo. {no} YouTube APIエラー: {exc}")
+            print("この動画のIDは書き込まず、残りのアップロードを停止します。")
+            break
         except Exception as exc:
             print(f"\nNo. {no} アップロードエラー: {exc}")
             print("この動画のIDは書き込まず、処理を停止します。")
@@ -273,11 +294,35 @@ def upload_pending(wb):
             print(f"アップロード済みのYouTube ID: {video_id}")
             print("処理を停止します。再実行前に、このIDをExcelへ登録してください。")
             raise
+        success_count += 1
         print("動画管理.xlsx にYouTube IDを保存しました。")
         print(f"https://youtu.be/{video_id}")
 
-    print(f"\n{total}本すべてのアップロードとID保存が完了しました。")
+    print(f"\n成功（ID保存済み）：{success_count}本")
+    if failed_no is not None:
+        print(f"失敗：1本（No. {failed_no}）")
+        print(f"未実行：{total - success_count - 1}本")
+    else:
+        print(f"{total}本すべてのアップロードとID保存が完了しました。")
+
+    if success_count > 0:
+        answer = input("ポータルを更新しますか？ [Y/N] ")
+        if answer in ("Y", "y"):
+            try:
+                result = subprocess.run(
+                    [sys.executable, str(PROJECT_DIR / "scripts" / "update_portal.py")],
+                    cwd=PROJECT_DIR,
+                )
+            except OSError as exc:
+                print(f"ポータル更新の起動に失敗しました: {exc}")
+                return 1
+            if result.returncode != 0:
+                print("ポータル更新に失敗しました。保存済みのYouTube IDは保持されています。")
+                return 1
+        else:
+            print("ポータル更新を見送りました。")
+    return 1 if failed_no is not None else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
