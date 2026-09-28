@@ -79,6 +79,12 @@
       color: #333;
     }
 
+    select.filter-active {
+      background: #e8f0fe;
+      border-color: #7b9acc;
+      font-weight: 600;
+    }
+
     .section-title {
       margin: 0 0 15px;
       font-size: 18px;
@@ -368,6 +374,15 @@
 
   function renderVideos() {
     const grid = document.getElementById("video-grid");
+
+    for (const [selectId] of filterMap) {
+     const select = document.getElementById(selectId);
+
+     select.classList.toggle(
+       "filter-active",
+       select.value !== ""
+     );
+   }
 
     const activeFilters = filterMap.map(
       ([selectId, category]) => ({
