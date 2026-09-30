@@ -1,5 +1,5 @@
 {
-  "videoCount": 34,
+  "videoCount": 44,
   "videos": [
     {
       "id": "xQV8Z6xowiQ",
@@ -1135,7 +1135,7 @@
       "title": "2026年9月26日 津山市新人戦｜プレー振り返り 034",
       "eventDate": "2026-09-26",
       "publishedAt": "2026-09-29T14:26:24Z",
-      "thumbnail": "https://i.ytimg.com/vi/H4AbvJwn-BI/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/H4AbvJwn-BI/maxresdefault.jpg",
       "privacyStatus": "unlisted",
       "tags": [
         "プレー:ディグ",
@@ -1181,7 +1181,7 @@
       "title": "2026年9月26日 津山市新人戦｜プレー振り返り 035",
       "eventDate": "2026-09-26",
       "publishedAt": "2026-09-29T14:27:31Z",
-      "thumbnail": "https://i.ytimg.com/vi/1848pQYabeQ/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/1848pQYabeQ/maxresdefault.jpg",
       "privacyStatus": "unlisted",
       "tags": [
         "プレー:攻撃",
@@ -1203,6 +1203,354 @@
         ],
         "ポジション": [
           "前衛レフト"
+        ],
+        "課題": [
+          "判断",
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "95rlQAXaDfI",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 036",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:28:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/95rlQAXaDfI/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ディグ",
+        "ポジション:後衛センター",
+        "ポジション:後衛レフト",
+        "大会:津山市新人戦",
+        "課題:ポジショニング",
+        "選手:桃花",
+        "選手:瑠伽"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "ディグ"
+        ],
+        "選手": [
+          "桃花",
+          "瑠伽"
+        ],
+        "ポジション": [
+          "後衛センター",
+          "後衛レフト"
+        ],
+        "課題": [
+          "ポジショニング"
+        ]
+      }
+    },
+    {
+      "id": "8Vw64EZC6fE",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 037",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:29:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/8Vw64EZC6fE/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:チャンスボール",
+        "ポジション:前衛センター",
+        "大会:津山市新人戦",
+        "課題:ポジショニング",
+        "課題:判断",
+        "選手:瑠伽"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "チャンスボール"
+        ],
+        "選手": [
+          "瑠伽"
+        ],
+        "ポジション": [
+          "前衛センター"
+        ],
+        "課題": [
+          "ポジショニング",
+          "判断"
+        ]
+      }
+    },
+    {
+      "id": "Yv5ChU_21RU",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 038",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:30:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/Yv5ChU_21RU/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ディグ",
+        "ポジション:前衛レフト",
+        "ポジション:後衛センター",
+        "ポジション:後衛レフト",
+        "大会:津山市新人戦",
+        "課題:ポジショニング",
+        "選手:心夢",
+        "選手:心春",
+        "選手:桃花"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "ディグ"
+        ],
+        "選手": [
+          "心夢",
+          "心春",
+          "桃花"
+        ],
+        "ポジション": [
+          "前衛レフト",
+          "後衛センター",
+          "後衛レフト"
+        ],
+        "課題": [
+          "ポジショニング"
+        ]
+      }
+    },
+    {
+      "id": "OsxPJKRU374",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 039",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:31:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/OsxPJKRU374/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:攻撃",
+        "ポジション:前衛レフト",
+        "大会:津山市新人戦",
+        "課題:準備",
+        "選手:桃花"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "攻撃"
+        ],
+        "選手": [
+          "桃花"
+        ],
+        "ポジション": [
+          "前衛レフト"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "borV7eRocBg",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 040",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:32:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/borV7eRocBg/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:チャンスボール",
+        "ポジション:前衛ライト",
+        "大会:津山市新人戦",
+        "課題:ポジショニング",
+        "課題:判断",
+        "選手:由來"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "チャンスボール"
+        ],
+        "選手": [
+          "由來"
+        ],
+        "ポジション": [
+          "前衛ライト"
+        ],
+        "課題": [
+          "ポジショニング",
+          "判断"
+        ]
+      }
+    },
+    {
+      "id": "lYDR-Cbx1Ys",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 041",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:33:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/lYDR-Cbx1Ys/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ブロック",
+        "ポジション:前衛センター",
+        "ポジション:前衛ライト",
+        "大会:津山市新人戦",
+        "課題:ポジショニング",
+        "選手:心春",
+        "選手:由來"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "ブロック"
+        ],
+        "選手": [
+          "心春",
+          "由來"
+        ],
+        "ポジション": [
+          "前衛センター",
+          "前衛ライト"
+        ],
+        "課題": [
+          "ポジショニング"
+        ]
+      }
+    },
+    {
+      "id": "pDSW-82Y37I",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 042",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:34:01Z",
+      "thumbnail": "https://i.ytimg.com/vi/pDSW-82Y37I/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:攻撃",
+        "ポジション:前衛レフト",
+        "大会:津山市新人戦",
+        "課題:準備",
+        "選手:心夢"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "攻撃"
+        ],
+        "選手": [
+          "心夢"
+        ],
+        "ポジション": [
+          "前衛レフト"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "3qFrS03Y6PM",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 043",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:35:04Z",
+      "thumbnail": "https://i.ytimg.com/vi/3qFrS03Y6PM/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:前衛センター",
+        "大会:津山市新人戦",
+        "課題:判断",
+        "課題:準備",
+        "選手:瑠伽"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "瑠伽"
+        ],
+        "ポジション": [
+          "前衛センター"
+        ],
+        "課題": [
+          "判断",
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "BpxVoZjwcak",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 044",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:36:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/BpxVoZjwcak/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ディグ",
+        "ポジション:前衛セッター",
+        "ポジション:後衛ライト",
+        "大会:津山市新人戦",
+        "課題:準備",
+        "選手:みらい",
+        "選手:由來"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "ディグ"
+        ],
+        "選手": [
+          "みらい",
+          "由來"
+        ],
+        "ポジション": [
+          "前衛セッター",
+          "後衛ライト"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "sze6GLM1_XE",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 045",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-09-30T15:37:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/sze6GLM1_XE/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:チャンスボール",
+        "ポジション:前衛センター",
+        "大会:津山市新人戦",
+        "課題:判断",
+        "課題:準備",
+        "選手:心春"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "チャンスボール"
+        ],
+        "選手": [
+          "心春"
+        ],
+        "ポジション": [
+          "前衛センター"
         ],
         "課題": [
           "判断",
