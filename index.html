@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
   <title>勝北VBC VIDEO PORTAL</title>
 
   <style>
@@ -18,8 +19,6 @@
       background: #f4f6f8;
       color: #202124;
     }
-
-    /* ---------- Header ---------- */
 
     header {
       background: #ffffff;
@@ -44,15 +43,11 @@
       font-size: 14px;
     }
 
-    /* ---------- Main ---------- */
-
     main {
       max-width: 1200px;
       margin: 0 auto;
       padding: 24px 20px 50px;
     }
-
-    /* ---------- Filter ---------- */
 
     .filter-panel {
       background: #ffffff;
@@ -84,11 +79,22 @@
       color: #333;
     }
 
-    /* ---------- Videos ---------- */
+    select.filter-active {
+      background: #e8f0fe;
+      border-color: #7b9acc;
+      font-weight: 600;
+    }
 
     .section-title {
       margin: 0 0 15px;
       font-size: 18px;
+    }
+
+    .video-count {
+      margin-left: 6px;
+      color: #6b7280;
+      font-size: 13px;
+      font-weight: normal;
     }
 
     .video-grid {
@@ -157,24 +163,16 @@
       font-size: 16px;
       font-weight: 600;
       line-height: 1.45;
-      margin-bottom: 9px;
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+    .empty-message {
+      grid-column: 1 / -1;
+      background: #ffffff;
+      border-radius: 13px;
+      padding: 35px 20px;
+      text-align: center;
+      color: #6b7280;
     }
-
-    .tag {
-      background: #eef1f4;
-      border-radius: 20px;
-      padding: 4px 9px;
-      font-size: 12px;
-      color: #555;
-    }
-
-    /* ---------- Notice ---------- */
 
     .notice {
       margin-top: 35px;
@@ -187,8 +185,6 @@
       color: #687078;
     }
 
-    /* ---------- Tablet ---------- */
-
     @media (max-width: 850px) {
       .filters {
         grid-template-columns: repeat(2, 1fr);
@@ -198,8 +194,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-
-    /* ---------- Smartphone ---------- */
 
     @media (max-width: 520px) {
       header {
@@ -242,11 +236,6 @@
         font-size: 13px;
       }
 
-      .tag {
-        font-size: 10px;
-        padding: 3px 7px;
-      }
-
       .play-button {
         width: 42px;
         height: 42px;
@@ -272,122 +261,205 @@
 
 <main>
 
-  <!-- フィルター（サンプルでは表示のみ） -->
   <div class="filter-panel">
     <div class="filter-title">動画を絞り込む</div>
 
     <div class="filters">
-      <select>
-        <option>大会</option>
-        <option>津山市新人戦</option>
+      <select id="filter-event">
+        <option value="">大会</option>
       </select>
 
-      <select>
-        <option>プレー</option>
-        <option>ディグ</option>
-        <option>ブロック</option>
-        <option>スパイク</option>
+      <select id="filter-play">
+        <option value="">プレー</option>
       </select>
 
-      <select>
-        <option>選手</option>
-        <option>選手名</option>
+      <select id="filter-player">
+        <option value="">選手</option>
       </select>
 
-      <select>
-        <option>ポジション</option>
-        <option>セッター</option>
-        <option>ミドル</option>
-        <option>アウトサイド</option>
+      <select id="filter-position">
+        <option value="">ポジション</option>
       </select>
     </div>
   </div>
 
-  <h2 class="section-title">津山市新人戦</h2>
+  <h2 class="section-title">
+    プレー振り返り
+    <span id="video-count" class="video-count"></span>
+  </h2>
 
-  <div class="video-grid">
-
-    <!-- 001 -->
-    <a class="video-card"
-       href="https://youtu.be/xQV8Z6xowiQ"
-       target="_blank">
-
-      <div class="thumbnail">
-        <img src="https://i.ytimg.com/vi/xQV8Z6xowiQ/hqdefault.jpg"
-             alt="動画001">
-        <div class="play-button"></div>
-      </div>
-
-      <div class="video-info">
-        <div class="video-title">
-          2026年9月26日 津山市新人戦｜プレー振り返り 01
-        </div>
-
-        <div class="tags">
-          <span class="tag">ディグ</span>
-          <span class="tag">セッター</span>
-          <span class="tag">ポジショニング</span>
-        </div>
-      </div>
-    </a>
-
-
-    <!-- 002 -->
-    <a class="video-card"
-       href="https://youtu.be/9hYhhy80QPE"
-       target="_blank">
-
-      <div class="thumbnail">
-        <img src="https://i.ytimg.com/vi/9hYhhy80QPE/hqdefault.jpg"
-             alt="動画002">
-        <div class="play-button"></div>
-      </div>
-
-      <div class="video-info">
-        <div class="video-title">
-          20260926 新人戦 002
-        </div>
-
-        <div class="tags">
-          <span class="tag">津山市新人戦</span>
-        </div>
-      </div>
-    </a>
-
-
-    <!-- 003 -->
-    <a class="video-card"
-       href="https://youtu.be/_CgzPrvDS50"
-       target="_blank">
-
-      <div class="thumbnail">
-        <img src="https://i.ytimg.com/vi/_CgzPrvDS50/hqdefault.jpg"
-             alt="動画003">
-        <div class="play-button"></div>
-      </div>
-
-      <div class="video-info">
-        <div class="video-title">
-          20260926 新人戦 003
-        </div>
-
-        <div class="tags">
-          <span class="tag">津山市新人戦</span>
-        </div>
-      </div>
-    </a>
-
-  </div>
-
+  <div id="video-grid" class="video-grid"></div>
 
   <div class="notice">
     本ページは、チーム内でのプレー振り返りを目的とした
-    動画共有システムの試験ページです。<br>
+    動画共有ポータルです。<br>
     掲載動画はYouTubeの限定公開機能を利用しています。
     ページURLおよび動画URLの第三者への共有はお控えください。
   </div>
 
 </main>
+
+<script>
+  let allVideos = [];
+
+  const filterMap = [
+    ["filter-event", "大会"],
+    ["filter-play", "プレー"],
+    ["filter-player", "選手"],
+    ["filter-position", "ポジション"]
+  ];
+
+  function getCategoryValues(video, category) {
+    return video.categories?.[category] || [];
+  }
+
+  function fillFilter(selectId, category) {
+    const select = document.getElementById(selectId);
+
+    const values = [
+      ...new Set(
+        allVideos.flatMap(video =>
+          getCategoryValues(video, category)
+        )
+      )
+    ].sort((a, b) => a.localeCompare(b, "ja"));
+
+    for (const value of values) {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = value;
+      select.appendChild(option);
+    }
+  }
+
+  function createVideoCard(video) {
+    const card = document.createElement("a");
+    card.className = "video-card";
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+
+    const youtubeBase =
+      "https:" + "//" + "youtu" + ".be/";
+
+    card.href = youtubeBase + video.id;
+
+    const thumbnail = document.createElement("div");
+    thumbnail.className = "thumbnail";
+
+    const img = document.createElement("img");
+    img.src = video.thumbnail;
+    img.alt = video.title;
+    img.loading = "lazy";
+
+    const playButton = document.createElement("div");
+    playButton.className = "play-button";
+
+    thumbnail.appendChild(img);
+    thumbnail.appendChild(playButton);
+
+    const info = document.createElement("div");
+    info.className = "video-info";
+
+    const title = document.createElement("div");
+    title.className = "video-title";
+    title.textContent = video.title;
+
+    info.appendChild(title);
+
+    card.appendChild(thumbnail);
+    card.appendChild(info);
+
+    return card;
+  }
+
+  function renderVideos() {
+    const grid = document.getElementById("video-grid");
+
+    for (const [selectId] of filterMap) {
+     const select = document.getElementById(selectId);
+
+     select.classList.toggle(
+       "filter-active",
+       select.value !== ""
+     );
+   }
+
+    const activeFilters = filterMap.map(
+      ([selectId, category]) => ({
+        category,
+        value: document.getElementById(selectId).value
+      })
+    );
+
+    const filtered = allVideos.filter(video =>
+      activeFilters.every(filter =>
+        !filter.value ||
+        getCategoryValues(video, filter.category)
+          .includes(filter.value)
+      )
+    );
+
+    grid.replaceChildren();
+
+    if (filtered.length === 0) {
+      const message = document.createElement("div");
+      message.className = "empty-message";
+      message.textContent =
+        "条件に一致する動画はありません。";
+
+      grid.appendChild(message);
+    } else {
+      for (const video of filtered) {
+        grid.appendChild(createVideoCard(video));
+      }
+    }
+
+    document.getElementById("video-count").textContent =
+      `（${filtered.length}本）`;
+  }
+
+  async function init() {
+    try {
+      const response = await fetch(
+        "./data/videos.json",
+        { cache: "no-store" }
+      );
+
+      if (!response.ok) {
+        throw new Error(
+          `videos.json取得失敗: ${response.status}`
+        );
+      }
+
+      const data = await response.json();
+
+      allVideos = data.videos || [];
+
+      for (const [selectId, category] of filterMap) {
+        fillFilter(selectId, category);
+
+        document
+          .getElementById(selectId)
+          .addEventListener("change", renderVideos);
+      }
+
+      renderVideos();
+
+    } catch (error) {
+      console.error(error);
+
+      const grid =
+        document.getElementById("video-grid");
+
+      grid.innerHTML =
+        '<div class="empty-message">' +
+        '動画データを読み込めませんでした。' +
+        '</div>';
+    }
+  }
+
+  init();
+</script>
 
 </body>
 </html>
