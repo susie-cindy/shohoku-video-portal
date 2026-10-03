@@ -1,5 +1,5 @@
 {
-  "videoCount": 63,
+  "videoCount": 64,
   "videos": [
     {
       "id": "xQV8Z6xowiQ",
@@ -2143,7 +2143,7 @@
       "title": "2026年9月26日 津山市新人戦｜プレー振り返り 064",
       "eventDate": "2026-09-26",
       "publishedAt": "2026-10-03T09:19:12Z",
-      "thumbnail": "https://i.ytimg.com/vi/eIlEV4clBUA/sddefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/eIlEV4clBUA/maxresdefault.jpg",
       "privacyStatus": "unlisted",
       "tags": [
         "プレー:チャンスボール",
@@ -2177,7 +2177,7 @@
       "title": "2026年9月26日 津山市新人戦｜プレー振り返り 065",
       "eventDate": "2026-09-26",
       "publishedAt": "2026-10-03T09:20:36Z",
-      "thumbnail": "https://i.ytimg.com/vi/uvh3juPp_pY/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/uvh3juPp_pY/maxresdefault.jpg",
       "privacyStatus": "unlisted",
       "tags": [
         "プレー:ブロックカバー",
@@ -2206,6 +2206,40 @@
         "ポジション": [],
         "課題": [
           "ポジショニング"
+        ]
+      }
+    },
+    {
+      "id": "8v52pQLVfF4",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 066",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-10-03T10:46:32Z",
+      "thumbnail": "https://i.ytimg.com/vi/8v52pQLVfF4/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:チャンスボール",
+        "ポジション:後衛ライト",
+        "大会:津山市新人戦",
+        "課題:ポジショニング",
+        "課題:準備",
+        "選手:由來"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "チャンスボール"
+        ],
+        "選手": [
+          "由來"
+        ],
+        "ポジション": [
+          "後衛ライト"
+        ],
+        "課題": [
+          "ポジショニング",
+          "準備"
         ]
       }
     }
