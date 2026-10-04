@@ -1,6 +1,342 @@
 {
-  "videoCount": 64,
+  "videoCount": 74,
   "videos": [
+    {
+      "id": "znnrtOX488o",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 076",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-04T10:46:08Z",
+      "thumbnail": "https://i.ytimg.com/vi/znnrtOX488o/hqdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:レセプション",
+        "ポジション:前衛レフト",
+        "大会:練習試合",
+        "課題:判断",
+        "選手:桃花"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "レセプション"
+        ],
+        "選手": [
+          "桃花"
+        ],
+        "ポジション": [
+          "前衛レフト"
+        ],
+        "課題": [
+          "判断"
+        ]
+      }
+    },
+    {
+      "id": "pfFi60xRnvc",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 075",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-04T10:44:31Z",
+      "thumbnail": "https://i.ytimg.com/vi/pfFi60xRnvc/sddefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:レセプション",
+        "ポジション:前衛レフト",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:桃花"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "レセプション"
+        ],
+        "選手": [
+          "桃花"
+        ],
+        "ポジション": [
+          "前衛レフト"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "7wDxBgVjb9Y",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 074",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-04T10:42:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/7wDxBgVjb9Y/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:前衛センター",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:莉緒"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "莉緒"
+        ],
+        "ポジション": [
+          "前衛センター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "crvTUBhGkbo",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 073",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-04T10:41:24Z",
+      "thumbnail": "https://i.ytimg.com/vi/crvTUBhGkbo/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:後衛センター",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:瑠伽"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "瑠伽"
+        ],
+        "ポジション": [
+          "後衛センター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "0CeevjkcTMY",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 072",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-10-04T10:39:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/0CeevjkcTMY/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:チャンスボール",
+        "ポジション:前衛センター",
+        "大会:津山市新人戦",
+        "課題:準備",
+        "選手:心春"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "チャンスボール"
+        ],
+        "選手": [
+          "心春"
+        ],
+        "ポジション": [
+          "前衛センター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "A04Ppx3mJbM",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 071",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-10-04T10:38:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/A04Ppx3mJbM/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:チャンスボール",
+        "ポジション:前衛らい",
+        "ポジション:前衛センター",
+        "ポジション:後衛セッター",
+        "大会:津山市新人戦",
+        "課題:準備",
+        "選手:みらい",
+        "選手:心春",
+        "選手:由來"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "チャンスボール"
+        ],
+        "選手": [
+          "みらい",
+          "心春",
+          "由來"
+        ],
+        "ポジション": [
+          "前衛らい",
+          "前衛センター",
+          "後衛セッター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "KYbnV18DCv8",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 070",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-10-04T10:37:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/KYbnV18DCv8/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:前衛セッター",
+        "ポジション:前衛センター",
+        "ポジション:前衛レフト",
+        "大会:津山市新人戦",
+        "課題:準備",
+        "選手:みらい",
+        "選手:心春",
+        "選手:桃花"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "みらい",
+          "心春",
+          "桃花"
+        ],
+        "ポジション": [
+          "前衛セッター",
+          "前衛センター",
+          "前衛レフト"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "gHZZDy5L0LQ",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 069",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-10-04T10:35:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/gHZZDy5L0LQ/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:攻撃",
+        "ポジション:前衛センター",
+        "大会:津山市新人戦",
+        "課題:準備",
+        "選手:瑠伽"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "攻撃"
+        ],
+        "選手": [
+          "瑠伽"
+        ],
+        "ポジション": [
+          "前衛センター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "WKmuxkx4FKU",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 068",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-10-04T10:34:21Z",
+      "thumbnail": "https://i.ytimg.com/vi/WKmuxkx4FKU/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ディグ",
+        "ポジション:後衛センター",
+        "大会:津山市新人戦",
+        "課題:準備",
+        "選手:柚奈"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "ディグ"
+        ],
+        "選手": [
+          "柚奈"
+        ],
+        "ポジション": [
+          "後衛センター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "h9LgIMKTfjU",
+      "title": "2026年9月26日 津山市新人戦｜プレー振り返り 067",
+      "eventDate": "2026-09-26",
+      "publishedAt": "2026-10-04T10:33:13Z",
+      "thumbnail": "https://i.ytimg.com/vi/h9LgIMKTfjU/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:前衛セッター",
+        "大会:津山市新人戦",
+        "課題:準備",
+        "選手:みらい"
+      ],
+      "categories": {
+        "大会": [
+          "津山市新人戦"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "みらい"
+        ],
+        "ポジション": [
+          "前衛セッター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
     {
       "id": "8v52pQLVfF4",
       "title": "2026年9月26日 津山市新人戦｜プレー振り返り 066",
@@ -2244,5 +2580,23 @@
       }
     }
   ],
-  "news": []
+  "news": [
+    {
+      "batchId": "d53a4aa7-0fda-4a8e-8d32-dc518b21ceac",
+      "uploadedAt": "2026-10-04T19:47:53.548186+09:00",
+      "videoCount": 10,
+      "events": [
+        {
+          "eventDate": "2026-09-26",
+          "eventName": "津山市新人戦",
+          "videoCount": 6
+        },
+        {
+          "eventDate": "2026-10-04",
+          "eventName": "練習試合",
+          "videoCount": 4
+        }
+      ]
+    }
+  ]
 }
