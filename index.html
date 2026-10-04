@@ -49,6 +49,78 @@
       padding: 24px 20px 50px;
     }
 
+    .news-panel {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+
+    .news-heading {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-bottom: 12px;
+    }
+
+    .news-heading h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .news-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 105px minmax(0, 1fr);
+      gap: 5px 14px;
+      padding: 12px 0;
+      border-top: 1px solid #edf0f3;
+    }
+
+    .news-date {
+      color: #6b7280;
+      font-size: 13px;
+      line-height: 1.7;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .news-summary {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .news-events {
+      margin: 3px 0 0;
+      padding: 0;
+      list-style: none;
+      color: #6b7280;
+      font-size: 13px;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 520px) {
+      .news-panel {
+        padding: 13px;
+        margin-bottom: 16px;
+      }
+
+      .news-item {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3px;
+      }
+    }
+
     .filter-panel {
       background: #ffffff;
       border-radius: 14px;
@@ -261,6 +333,13 @@
 
 <main>
 
+  <section id="news-panel" class="news-panel" aria-labelledby="news-title" hidden>
+    <div class="news-heading">
+      <h2 id="news-title">新着情報</h2>
+    </div>
+    <ol id="news-list" class="news-list" aria-label="直近1回のアップロード履歴"></ol>
+  </section>
+
   <div class="filter-panel">
     <div class="filter-title">動画を絞り込む</div>
 
@@ -311,6 +390,65 @@
 
   function getCategoryValues(video, category) {
     return video.categories?.[category] || [];
+  }
+
+  function renderLatestNews(news) {
+    const panel = document.getElementById("news-panel");
+    const list = document.getElementById("news-list");
+    panel.hidden = true;
+    list.replaceChildren();
+    try {
+      const latest = Array.isArray(news) ? news[0] : null;
+      if (!latest || !Number.isInteger(latest.videoCount) || latest.videoCount < 1) return;
+      const uploadedAt = new Date(latest.uploadedAt);
+      if (!latest.uploadedAt || Number.isNaN(uploadedAt.getTime())) return;
+      if (!Array.isArray(latest.events) || latest.events.length === 0) return;
+      if (latest.events.some(event =>
+        !event || typeof event.eventName !== "string" || !event.eventName.trim() ||
+        !Number.isInteger(event.videoCount) || event.videoCount < 1
+      )) return;
+      if (latest.events.reduce((sum, event) => sum + event.videoCount, 0) !== latest.videoCount) return;
+
+      const item = document.createElement("li");
+      item.className = "news-item";
+      const time = document.createElement("time");
+      time.className = "news-date";
+      time.dateTime = latest.uploadedAt;
+      const dateText = new Intl.DateTimeFormat("ja-JP", {
+        timeZone: "Asia/Tokyo", month: "numeric", day: "numeric"
+      }).format(uploadedAt);
+      const timeText = new Intl.DateTimeFormat("ja-JP", {
+        timeZone: "Asia/Tokyo", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+      }).format(uploadedAt);
+      time.textContent = `${dateText} ${timeText}`;
+
+      const detail = document.createElement("div");
+      const summary = document.createElement("p");
+      summary.className = "news-summary";
+      summary.textContent = `動画を${latest.videoCount}本追加しました`;
+      const events = document.createElement("ul");
+      events.className = "news-events";
+      for (const event of latest.events) {
+        const row = document.createElement("li");
+        const name = event.eventName.trim();
+        let label = name;
+        if (typeof event.eventDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(event.eventDate)) {
+          const [, month, day] = event.eventDate.split("-");
+          const date = `${Number(month)}/${Number(day)}`;
+          const japaneseDate = `${Number(month)}月${Number(day)}日`;
+          if (!name.includes(date) && !name.includes(japaneseDate)) label = `${date} ${name}`;
+        }
+        row.textContent = `${label}：${event.videoCount}本`;
+        events.appendChild(row);
+      }
+      detail.append(summary, events);
+      item.append(time, detail);
+      list.appendChild(item);
+      panel.hidden = false;
+    } catch (error) {
+      console.warn("新着情報を表示できませんでした。", error);
+      panel.hidden = true;
+    }
   }
 
   function fillFilter(selectId, category) {
@@ -434,6 +572,7 @@
       const data = await response.json();
 
       allVideos = data.videos || [];
+      renderLatestNews(data.news);
 
       for (const [selectId, category] of filterMap) {
         fillFilter(selectId, category);

@@ -1,8 +1,16 @@
 from pathlib import Path
 from datetime import datetime
+import os
+import shutil
 import subprocess
 import sys
+from uuid import uuid4
 from openpyxl import load_workbook
+
+from portal_history import (
+    EXCEL_PATH, append_upload_record, has_pending_portal_update,
+    now_jst, read_workbook_state,
+)
 
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -20,10 +28,6 @@ PROJECT_DIR = Path(__file__).resolve().parent.parent
 CLIENT_SECRET = PROJECT_DIR / "client_secret.json"
 TOKEN_FILE = PROJECT_DIR / "token.json"
 
-EXCEL_PATH = Path(
-    r"C:\Users\susuk\OneDrive\勝北VBC\動画ポータル\動画管理.xlsx"
-)
-
 VIDEO_ROOT = Path(
     r"C:\Users\susuk\OneDrive\勝北VBC\動画ポータル"
 )
@@ -38,6 +42,39 @@ SCOPES = [
 # =========================================================
 # 補助関数
 # =========================================================
+
+def find_upload_matches(filename):
+    # Excelの値をパスやglobパターンとして扱わず、ファイル名で照合する。
+    if not filename or Path(filename).name != filename:
+        return []
+    matches = [
+        folder / filename
+        for folder in VIDEO_ROOT.glob("*/*/upload")
+        if (folder / filename).is_file()
+    ]
+    if len(matches) > 1:
+        raise RuntimeError(
+            f"同名の動画ファイルが複数見つかりました: {filename}\n"
+            + "\n".join(str(path) for path in matches)
+        )
+    return matches
+
+
+def archive_video(video_path):
+    if video_path.parent.name != "upload":
+        raise ValueError(f"upload内の動画ではありません: {video_path}")
+    archive = video_path.parent.parent / "archive"
+    destination = archive / video_path.name
+    # Windowsのrenameは移動先が存在すると失敗する（事前確認後の競合も保護）。
+    # 上書き動作の異なるOSでは、安全のため移動しない。
+    if os.name != "nt":
+        raise OSError("archiveへの安全な移動はWindowsで実行してください。")
+    archive.mkdir(exist_ok=True)
+    if os.path.lexists(destination):
+        raise FileExistsError(f"移動先が既に存在します: {destination}")
+    video_path.rename(destination)
+    print(f"archiveへ移動しました: {video_path} → {destination}")
+
 
 def split_values(value):
     if value is None:
@@ -192,6 +229,8 @@ def main():
 
 
 def upload_pending(wb):
+    # 記録形式の不整合はYouTubeへ送信する前に検出する。
+    read_workbook_state(wb)
     ws = wb.active
     headers = {
         str(cell.value).strip(): cell.column
@@ -211,6 +250,13 @@ def upload_pending(wb):
         # IDのある行は必ずスキップする。
         youtube_id = ws.cell(row, headers["youtube ID"]).value
         if youtube_id is not None and str(youtube_id).strip() != "":
+            filename = str(ws.cell(row, headers["ファイル名"]).value or "")
+            for video_path in find_upload_matches(filename):
+                try:
+                    archive_video(video_path)
+                except OSError as exc:
+                    print(f"警告: アップロード済み動画のarchive整理に失敗: {video_path}\n{exc}")
+                    print("削除・上書きは行いません。この動画は再アップロードしません。")
             continue
         no_value = ws.cell(row, headers["no."]).value
         if no_value is None or str(no_value).strip() == "":
@@ -220,19 +266,16 @@ def upload_pending(wb):
             name: ws.cell(row, headers[name]).value
             for name in required[1:-1]
         }
+        if not str(data["大会名"] or "").strip() or not str(data["プレー種別"] or "").strip():
+            raise ValueError(f"No. {no}: 大会名とプレー種別を入力してください。")
         filename = str(data["ファイル名"] or "")
 
-        matches = list(VIDEO_ROOT.glob(f"*/*/upload/{filename}"))
+        matches = find_upload_matches(filename)
 
         if len(matches) == 1:
             video_path = matches[0]
         elif len(matches) == 0: 
             video_path = VIDEO_ROOT / "__NOT_FOUND__" / filename
-        else:
-            raise RuntimeError(
-                f"同名の動画ファイルが複数見つかりました: {filename}\n"
-                + "\n".join(str(path) for path in matches)
-            )
 
         date_text = format_date(data["日時"])
         title = (
@@ -244,7 +287,10 @@ def upload_pending(wb):
 
     if not targets:
         print("未アップロードの動画はありません。")
-        return
+        if has_pending_portal_update(wb, PROJECT_DIR / "data" / "videos.json"):
+            print("Excel保存済みの未反映動画・履歴があります。")
+            return offer_portal_update()
+        return 0
 
     print("=" * 60)
     print("YouTube一括アップロード対象（限定公開）")
@@ -258,7 +304,7 @@ def upload_pending(wb):
         print("次の動画ファイルが存在しないため、アップロードを開始しません。")
         for row, no, filename, video_path, title, tags in missing:
             print(f"No. {no}: {video_path}")
-        return
+        return 1
 
     total = len(targets)
     answer = input(
@@ -266,8 +312,16 @@ def upload_pending(wb):
     )
     if answer != "ALL":
         print("キャンセルしました。")
-        return
+        return 0
 
+    batch_id = str(uuid4())
+    started_at = now_jst()
+    # 初回保存や途中停止から復旧できるよう、実行前のブックを保存する。
+    backup_dir = EXCEL_PATH.parent / "_portal_upload_backups"
+    backup_dir.mkdir(exist_ok=True)
+    backup_file = backup_dir / f"{EXCEL_PATH.stem}_{batch_id}.xlsx"
+    shutil.copy2(EXCEL_PATH, backup_file)
+    print(f"管理表のバックアップ: {backup_file}")
     youtube = get_youtube()
     success_count = 0
     failed_no = None
@@ -288,6 +342,13 @@ def upload_pending(wb):
         # 次の動画へ進む前に、この動画のIDを必ず保存する。
         ws.cell(row, headers["youtube ID"]).value = video_id
         try:
+            append_upload_record(
+                wb, batch_id=batch_id, started_at=started_at,
+                video_id=video_id, confirmed_at=now_jst(),
+                order=success_count + 1,
+                event_date=ws.cell(row, headers["日時"]).value,
+                event_name=ws.cell(row, headers["大会名"]).value,
+            )
             wb.save(EXCEL_PATH)
         except Exception as exc:
             print(f"\nNo. {no} Excel保存エラー: {exc}")
@@ -297,6 +358,16 @@ def upload_pending(wb):
         success_count += 1
         print("動画管理.xlsx にYouTube IDを保存しました。")
         print(f"https://youtu.be/{video_id}")
+        try:
+            archive_video(video_path)
+        except OSError as exc:
+            print(f"\nNo. {no} archive移動エラー: {exc}")
+            print("YouTubeアップロードとYouTube IDのExcel保存は完了済みです。再アップロードしてはいけません。")
+            print(f"YouTube ID: {video_id} / 元動画: {video_path}")
+            print(f"成功（ID保存済み）：{success_count}本")
+            print("archive移動失敗：1本。残りの処理を停止します。")
+            print(f"未実行：{total - index}本")
+            return 1
 
     print(f"\n成功（ID保存済み）：{success_count}本")
     if failed_no is not None:
@@ -306,22 +377,28 @@ def upload_pending(wb):
         print(f"{total}本すべてのアップロードとID保存が完了しました。")
 
     if success_count > 0:
-        answer = input("ポータルを更新しますか？ [Y/N] ")
-        if answer in ("Y", "y"):
-            try:
-                result = subprocess.run(
-                    [sys.executable, str(PROJECT_DIR / "scripts" / "update_portal.py")],
-                    cwd=PROJECT_DIR,
-                )
-            except OSError as exc:
-                print(f"ポータル更新の起動に失敗しました: {exc}")
-                return 1
-            if result.returncode != 0:
-                print("ポータル更新に失敗しました。保存済みのYouTube IDは保持されています。")
-                return 1
-        else:
-            print("ポータル更新を見送りました。")
+        if offer_portal_update() != 0:
+            return 1
     return 1 if failed_no is not None else 0
+
+
+def offer_portal_update():
+    answer = input("ポータルを更新しますか？ [Y/N] ")
+    if answer not in ("Y", "y"):
+        print("ポータル更新を見送りました。")
+        return 0
+    try:
+        result = subprocess.run(
+            [sys.executable, str(PROJECT_DIR / "scripts" / "update_portal.py")],
+            cwd=PROJECT_DIR,
+        )
+    except OSError as exc:
+        print(f"ポータル更新の起動に失敗しました: {exc}")
+        return 1
+    if result.returncode != 0:
+        print("ポータル更新に失敗しました。保存済みのYouTube IDは保持されています。")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":

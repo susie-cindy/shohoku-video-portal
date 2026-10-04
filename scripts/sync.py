@@ -1,6 +1,10 @@
 import json
+import os
 import re
+import tempfile
 from pathlib import Path
+
+from portal_history import build_latest_news, parse_timestamp, read_excel_state
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -231,22 +235,54 @@ def get_video_data(youtube, video_ids):
 
 
 def sort_videos(videos):
-    """
-    大会日 → タイトルの順。
-    日付を取得できなかった動画は最後。
-    """
-
-    return sorted(
-        videos,
-        key=lambda video: (
-            video["eventDate"] is None,
-            video["eventDate"] or "",
-            video["title"],
+    """アップロード日時の降順。日時が不明な動画は最後。"""
+    def key(video):
+        timestamp = parse_timestamp(video.get("publishedAt"))
+        return (
+            timestamp is None,
+            -timestamp if timestamp is not None else 0,
+            video["title"], video["id"],
         )
-    )
+    return sorted(videos, key=key)
+
+
+def make_portal_output(videos, saved_ids, records):
+    excluded = [video for video in videos if video["id"] not in saved_ids]
+    if excluded:
+        print(f"ExcelにIDが未保存の動画を除外: {len(excluded)}本")
+    videos = sort_videos([video for video in videos if video["id"] in saved_ids])
+    return {
+        "videoCount": len(videos),
+        "videos": videos,
+        "news": build_latest_news(records, {video["id"] for video in videos}),
+    }
+
+
+def write_portal_output(output, path=OUTPUT_FILE):
+    """完成したUTF-8 JSONだけを置換し、書き込み失敗時は旧JSONを残す。"""
+    content = json.dumps(output, ensure_ascii=False, indent=2) + "\n"
+    if path.exists() and path.read_text(encoding="utf-8") == content:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", newline="\n", dir=path.parent,
+            prefix=".videos-", suffix=".tmp", delete=False,
+        ) as handle:
+            temporary = Path(handle.name)
+            handle.write(content)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None and temporary.exists():
+            temporary.unlink()
 
 
 def main():
+    # Excel保存済みのIDだけを採用する。読めない場合は既存JSONを更新しない。
+    saved_ids, records = read_excel_state()
     print("YouTube動画情報を取得します。")
 
     youtube = get_youtube()
@@ -270,31 +306,13 @@ def main():
         video_ids
     )
 
-    videos = sort_videos(videos)
-
-    DATA_DIR.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    output = {
-        "videoCount": len(videos),
-        "videos": videos,
-    }
-
-    OUTPUT_FILE.write_text(
-        json.dumps(
-            output,
-            ensure_ascii=False,
-            indent=2
-        ),
-        encoding="utf-8"
-    )
+    output = make_portal_output(videos, saved_ids, records)
+    write_portal_output(output)
 
     print()
     print(
         f"ポータル対象動画: "
-        f"{len(videos)}本"
+        f"{output['videoCount']}本"
     )
     print(
         f"生成完了: "
