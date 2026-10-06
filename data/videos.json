@@ -1,12 +1,44 @@
 {
-  "videoCount": 84,
+  "videoCount": 85,
   "videos": [
+    {
+      "id": "TILxwaIlyb8",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 087",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T08:15:07Z",
+      "thumbnail": "https://i.ytimg.com/vi/TILxwaIlyb8/hqdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:後衛ライト",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:柚奈"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "柚奈"
+        ],
+        "ポジション": [
+          "後衛ライト"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
     {
       "id": "PjFpDy27r8A",
       "title": "2026年10月4日 練習試合｜プレー振り返り 086",
       "eventDate": "2026-10-04",
       "publishedAt": "2026-10-05T12:47:49Z",
-      "thumbnail": "https://i.ytimg.com/vi/PjFpDy27r8A/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/PjFpDy27r8A/maxresdefault.jpg",
       "privacyStatus": "unlisted",
       "tags": [
         "プレー:レセプション",
@@ -2913,14 +2945,14 @@
   ],
   "news": [
     {
-      "batchId": "4f8e26e4-b741-4a4c-b634-e63b2e10d05c",
-      "uploadedAt": "2026-10-05T21:49:22.883153+09:00",
-      "videoCount": 10,
+      "batchId": "3c297b4e-527a-45ee-a776-04831043ab93",
+      "uploadedAt": "2026-10-06T17:16:33.612528+09:00",
+      "videoCount": 1,
       "events": [
         {
           "eventDate": "2026-10-04",
           "eventName": "練習試合",
-          "videoCount": 10
+          "videoCount": 1
         }
       ]
     }
