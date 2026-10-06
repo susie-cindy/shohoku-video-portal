@@ -1,12 +1,304 @@
 {
-  "videoCount": 85,
+  "videoCount": 94,
   "videos": [
+    {
+      "id": "Ki3BIOFlBto",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 096",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:19:15Z",
+      "thumbnail": "https://i.ytimg.com/vi/Ki3BIOFlBto/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ディグ",
+        "ポジション:前衛レフト",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:心夢"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ディグ"
+        ],
+        "選手": [
+          "心夢"
+        ],
+        "ポジション": [
+          "前衛レフト"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "r5zRb5DXW5I",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 095",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:17:46Z",
+      "thumbnail": "https://i.ytimg.com/vi/r5zRb5DXW5I/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:前衛センター",
+        "ポジション:前衛レフト",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:心夢",
+        "選手:瑠伽"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "心夢",
+          "瑠伽"
+        ],
+        "ポジション": [
+          "前衛センター",
+          "前衛レフト"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "DDIANlFYwPc",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 094",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:16:23Z",
+      "thumbnail": "https://i.ytimg.com/vi/DDIANlFYwPc/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:レセプション",
+        "ポジション:前衛センター",
+        "大会:練習試合",
+        "課題:姿勢",
+        "選手:瑠伽"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "レセプション"
+        ],
+        "選手": [
+          "瑠伽"
+        ],
+        "ポジション": [
+          "前衛センター"
+        ],
+        "課題": [
+          "姿勢"
+        ]
+      }
+    },
+    {
+      "id": "sgWtpj6nel0",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 093",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:14:54Z",
+      "thumbnail": "https://i.ytimg.com/vi/sgWtpj6nel0/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:後衛セッター",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:みらい"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "みらい"
+        ],
+        "ポジション": [
+          "後衛セッター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "vzyuxFpRzVA",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 092",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:13:26Z",
+      "thumbnail": "https://i.ytimg.com/vi/vzyuxFpRzVA/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:後衛ライト",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:柚奈"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "柚奈"
+        ],
+        "ポジション": [
+          "後衛ライト"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "SKpWmERGKPg",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 091",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:11:56Z",
+      "thumbnail": "https://i.ytimg.com/vi/SKpWmERGKPg/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:レセプション",
+        "ポジション:後衛レフト",
+        "大会:練習試合",
+        "課題:姿勢",
+        "選手:心夢"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "レセプション"
+        ],
+        "選手": [
+          "心夢"
+        ],
+        "ポジション": [
+          "後衛レフト"
+        ],
+        "課題": [
+          "姿勢"
+        ]
+      }
+    },
+    {
+      "id": "CcyAxMYIgpg",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 090",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:10:24Z",
+      "thumbnail": "https://i.ytimg.com/vi/CcyAxMYIgpg/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ラリー中",
+        "ポジション:前衛センター",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:莉緒"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ラリー中"
+        ],
+        "選手": [
+          "莉緒"
+        ],
+        "ポジション": [
+          "前衛センター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "aoPdJhOziCI",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 089",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:08:52Z",
+      "thumbnail": "https://i.ytimg.com/vi/aoPdJhOziCI/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:レセプション",
+        "ポジション:前衛センター",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:莉緒"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "レセプション"
+        ],
+        "選手": [
+          "莉緒"
+        ],
+        "ポジション": [
+          "前衛センター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
+    {
+      "id": "CMx-ZUo_09g",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 088",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:07:20Z",
+      "thumbnail": "https://i.ytimg.com/vi/CMx-ZUo_09g/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ディグ",
+        "ポジション:後衛センター",
+        "大会:練習試合",
+        "課題:準備",
+        "選手:瑠伽"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ディグ"
+        ],
+        "選手": [
+          "瑠伽"
+        ],
+        "ポジション": [
+          "後衛センター"
+        ],
+        "課題": [
+          "準備"
+        ]
+      }
+    },
     {
       "id": "TILxwaIlyb8",
       "title": "2026年10月4日 練習試合｜プレー振り返り 087",
       "eventDate": "2026-10-04",
       "publishedAt": "2026-10-06T08:15:07Z",
-      "thumbnail": "https://i.ytimg.com/vi/TILxwaIlyb8/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/TILxwaIlyb8/maxresdefault.jpg",
       "privacyStatus": "unlisted",
       "tags": [
         "プレー:ラリー中",
@@ -2945,14 +3237,14 @@
   ],
   "news": [
     {
-      "batchId": "3c297b4e-527a-45ee-a776-04831043ab93",
-      "uploadedAt": "2026-10-06T17:16:33.612528+09:00",
-      "videoCount": 1,
+      "batchId": "5c0925ca-79de-4b63-8867-a4cd7840eb37",
+      "uploadedAt": "2026-10-06T22:20:46.016819+09:00",
+      "videoCount": 9,
       "events": [
         {
           "eventDate": "2026-10-04",
           "eventName": "練習試合",
-          "videoCount": 1
+          "videoCount": 9
         }
       ]
     }
