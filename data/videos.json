@@ -1,6 +1,38 @@
 {
-  "videoCount": 94,
+  "videoCount": 95,
   "videos": [
+    {
+      "id": "d8NivIKXaCE",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 097",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-06T13:31:59Z",
+      "thumbnail": "https://i.ytimg.com/vi/d8NivIKXaCE/hqdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ブロック",
+        "ポジション:前衛センター",
+        "大会:練習試合",
+        "課題:ポジショニング",
+        "選手:莉緒"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ブロック"
+        ],
+        "選手": [
+          "莉緒"
+        ],
+        "ポジション": [
+          "前衛センター"
+        ],
+        "課題": [
+          "ポジショニング"
+        ]
+      }
+    },
     {
       "id": "Ki3BIOFlBto",
       "title": "2026年10月4日 練習試合｜プレー振り返り 096",
@@ -3237,14 +3269,14 @@
   ],
   "news": [
     {
-      "batchId": "5c0925ca-79de-4b63-8867-a4cd7840eb37",
-      "uploadedAt": "2026-10-06T22:20:46.016819+09:00",
-      "videoCount": 9,
+      "batchId": "92ab6625-571b-4d8f-b68e-c9bc3d948a40",
+      "uploadedAt": "2026-10-06T22:33:26.550350+09:00",
+      "videoCount": 1,
       "events": [
         {
           "eventDate": "2026-10-04",
           "eventName": "練習試合",
-          "videoCount": 9
+          "videoCount": 1
         }
       ]
     }
