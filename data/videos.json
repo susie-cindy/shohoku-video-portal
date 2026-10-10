@@ -1,6 +1,84 @@
 {
-  "videoCount": 125,
+  "videoCount": 127,
   "videos": [
+    {
+      "id": "qH_hQjDg7PQ",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 129",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-10T13:49:29Z",
+      "thumbnail": "https://i.ytimg.com/vi/qH_hQjDg7PQ/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ディグ",
+        "ポジション:後衛センター",
+        "ポジション:後衛ライト",
+        "ポジション:後衛レフト",
+        "大会:練習試合",
+        "選手:心夢",
+        "選手:柚奈",
+        "選手:美咲"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ディグ"
+        ],
+        "選手": [
+          "心夢",
+          "柚奈",
+          "美咲"
+        ],
+        "ポジション": [
+          "後衛センター",
+          "後衛ライト",
+          "後衛レフト"
+        ],
+        "課題": []
+      }
+    },
+    {
+      "id": "Umqu1soNQzI",
+      "title": "2026年10月4日 練習試合｜プレー振り返り 128",
+      "eventDate": "2026-10-04",
+      "publishedAt": "2026-10-10T13:47:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/Umqu1soNQzI/maxresdefault.jpg",
+      "privacyStatus": "unlisted",
+      "tags": [
+        "プレー:ディグ",
+        "ポジション:前衛レフト",
+        "ポジション:後衛センター",
+        "ポジション:後衛ライト",
+        "ポジション:後衛レフト",
+        "大会:練習試合",
+        "選手:心夢",
+        "選手:柚奈",
+        "選手:桃花",
+        "選手:美咲"
+      ],
+      "categories": {
+        "大会": [
+          "練習試合"
+        ],
+        "プレー": [
+          "ディグ"
+        ],
+        "選手": [
+          "心夢",
+          "柚奈",
+          "桃花",
+          "美咲"
+        ],
+        "ポジション": [
+          "前衛レフト",
+          "後衛センター",
+          "後衛ライト",
+          "後衛レフト"
+        ],
+        "課題": []
+      }
+    },
     {
       "id": "WbP_IRWLGGw",
       "title": "2026年10月4日 練習試合｜プレー振り返り 127",
@@ -35,7 +113,7 @@
       "title": "2026年10月4日 練習試合｜プレー振り返り 126",
       "eventDate": "2026-10-04",
       "publishedAt": "2026-10-09T13:36:31Z",
-      "thumbnail": "https://i.ytimg.com/vi/PlB5aDIwzkg/sddefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/PlB5aDIwzkg/maxresdefault.jpg",
       "privacyStatus": "unlisted",
       "tags": [
         "プレー:ラリー中",
@@ -4209,14 +4287,14 @@
   ],
   "news": [
     {
-      "batchId": "1f290def-1390-4b01-a9bb-85a664819849",
-      "uploadedAt": "2026-10-09T22:39:53.649073+09:00",
-      "videoCount": 10,
+      "batchId": "779cd315-ee5a-46ab-92f3-85632521e08b",
+      "uploadedAt": "2026-10-10T22:51:23.939695+09:00",
+      "videoCount": 2,
       "events": [
         {
           "eventDate": "2026-10-04",
           "eventName": "練習試合",
-          "videoCount": 10
+          "videoCount": 2
         }
       ]
     }
